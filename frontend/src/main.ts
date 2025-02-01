@@ -7,7 +7,7 @@ import router from './router'
 
 const app = createApp(App)
 
-app.use(VueQueryPlugin)
 app.use(router)
+app.use(VueQueryPlugin)
 
 app.mount('#app')

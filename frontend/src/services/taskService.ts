@@ -1,3 +1,4 @@
+import type { Task } from '@/types/Task';
 import axios from 'axios';
 
 const client = axios.create({
@@ -12,6 +13,9 @@ const client = axios.create({
 export default {
   getTasks() {
     return client.get('/tasks').then(response => response.data);
+  },
+  createTask(task: Task) {
+    return client.post('/tasks', task).then(response => response.data);
   }
 };
 
